@@ -1,0 +1,23 @@
+# Segredos - NUNCA versionar
+backend/.env
+
+# Ambiente virtual Python
+venv/
+.venv/
+
+# Cache do Python
+__pycache__/
+*.pyc
+
+# Historico de chat (dados locais/pessoais, nao deve ir pro repo publico)
+frontend/chat_history/
+
+# Streamlit
+.streamlit/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# SO
+.DS_Store
+Thumbs.db
