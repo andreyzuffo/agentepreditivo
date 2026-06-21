@@ -40,9 +40,14 @@ O Streamlit foi separado em três abas:
 
 ## Como executar
 
+0. Instalação do Python 3.12 no [Python](https://www.python.org/downloads/windows/)
+   ```bash   
+   Python 3.12.10 - April 8, 2025: Download Windows installer (64-bit)
+   ```
+
 1. Crie um ambiente virtual e instale as dependências:
    ```bash
-   python -m venv venv
+   py -3.12 -m venv venv
    .\venv\Scripts\Activate.ps1
 
    pip install -r requirements.txt
@@ -72,7 +77,11 @@ O backend deste projeto usa o SDK, **`google-genai`** (`from google import genai
 
 ## Versão do scikit-learn
 
-Os arquivos `.pkl` foram gerados com **scikit-learn 1.6.1**. No `requirements.txt` foi fixado a versão para evitar o `InconsistentVersionWarning` do scikit-learn ao carregar o modelo/scaler em um ambiente com uma versão diferente.
+Os arquivos `.pkl` foram gerados com **scikit-learn 1.6.1**. No `requirements.txt` foi fixado a versão para evitar o `InconsistentVersionWarning` do scikit-learn ao carregar o modelo/scaler em um ambiente com uma versão diferente. A versão pode ser visualizada através da primeira célula do arquivo `ClassificacaoModelo.ipynb`.
+
+## Versão do Python
+
+Este projeto precisou ser executado na versão Python 3.12. O principal motivo foi a compatibilidade do `scikit-learn==1.6.1`, no qual foi fixado propositalmente nessa versão por gerar erro ao tentar ser compilado em versões do Python superiores. Antes de fixar a aplicação na versão 3.12, foi atualizado a versão do scikit-learn para a 1.7.2. Essa alternativa funcionou sem erros de compilação, mas não foi continuada pois os arquivos `model/melhor_modelo_boston.pkl` e `model/scaler_boston.pkl` foram criados a partir da versão 1.6.1, mantendo assim uma compatibilidade dos dois lados do projeto.
 
 ## Endpoints da API
 
